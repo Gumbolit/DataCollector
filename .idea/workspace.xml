@@ -4,19 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e72a623d-2947-40e4-85d6-7e884efc53bf" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/DataCollector.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/information_collector/com_port_worker.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/information_collector/information_collection_interface.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/information_sender/Information_sender_interface.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/information_sender/mqtt_sender.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    <list default="true" id="e72a623d-2947-40e4-85d6-7e884efc53bf" name="Changes" comment="реализован интерфейс для получения данных InformationCollectorIntrface переделан класс наследник com_port_worker">
+      <change afterPath="$PROJECT_DIR$/sender/sender_interface.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/information_collector/com_port_worker.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/com_port_worker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/information_collector/information_collection_interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/collector_interface.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/information_sender/Information_sender_interface.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/information_sender/mqtt_sender.py" beforeDir="false" afterPath="$PROJECT_DIR$/sender/mqtt_sender.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +27,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Gumbolit"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Gumbolit/DataCollector",
+    "accountId": "4c97c139-cb26-4d8e-b409-3befebaa7191"
+  }
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 1
 }]]></component>
@@ -44,12 +50,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.Information_sender_interface.executor": "Run",
     "Python.com_port_worker.executor": "Run",
     "Python.information_collection_interface.executor": "Run",
     "Python.main.executor": "Run",
     "Python.mqtt_sender.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master"
+    "git-widget-placeholder": "master",
+    "settings.editor.selected.configurable": "vcs.Git"
   }
 }]]></component>
   <component name="SharedIndexes">
@@ -68,6 +76,15 @@
       <option name="presentableId" value="Default" />
       <updated>1742292399374</updated>
     </task>
+    <task id="LOCAL-00001" summary="реализован интерфейс для получения данных InformationCollectorIntrface переделан класс наследник com_port_worker">
+      <option name="closed" value="true" />
+      <created>1742302392627</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1742302392627</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -75,10 +92,26 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="реализован интерфейс для получения данных InformationCollectorIntrface переделан класс наследник com_port_worker" />
+    <option name="LAST_COMMIT_MESSAGE" value="реализован интерфейс для получения данных InformationCollectorIntrface переделан класс наследник com_port_worker" />
   </component>
 </project>
