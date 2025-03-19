@@ -1,14 +1,13 @@
 import serial
-from information_collector import*
-from information_collector.information_collection_interface import*
+from information_collector.information_collection_interface import *
 
 
 #абстрактный класс который содержит общие поляя и методы
 #для различных видов подключаемых устройств перифирии с разными датчиками
 class ComPortWorker(InformationCollectorIntrface):
-    def __init__(self, com: str, baudrate: int= 9600):
-        self._com=com
-        self._baudrate=baudrate
+    def __init__(self, com: str, baudrate: int = 9600):
+        self._com = com
+        self._baudrate = baudrate
         self.ser = None  # Инициализируем атрибут для хранения объекта serial.Serial
 
     @property # декоратор который делает геттер вызвав ComPortWorker.com веренет какой у нас com
