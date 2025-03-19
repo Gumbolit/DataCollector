@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e72a623d-2947-40e4-85d6-7e884efc53bf" name="Changes" comment="реализован интерфейс для получения данных InformationCollectorIntrface переделан класс наследник com_port_worker">
-      <change afterPath="$PROJECT_DIR$/sender/sender_interface.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/information_collector/com_port_worker.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/com_port_worker.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/information_collector/information_collection_interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/collector/collector_interface.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/information_sender/Information_sender_interface.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/information_sender/mqtt_sender.py" beforeDir="false" afterPath="$PROJECT_DIR$/sender/mqtt_sender.py" afterDir="false" />
+    <list default="true" id="e72a623d-2947-40e4-85d6-7e884efc53bf" name="Changes" comment="В интерфейс CollectorInterfase добавлено закрытие порта &#10;В интерфейс CollectorInterfase исправлена опечатка&#10;Добавлени интерфейс для отправки данных information_sender.mqtt_sender с флагом подключения методами connect_to_server publish_to_server end_connection_to_server&#10;В классе наследнике MqttSender исправлены функции под работу с интерфейсом &#10;Переписан main под работу с изменениями&#10;Интерфейсфы переименованы на более короткие и понятные">
+      <change afterPath="$PROJECT_DIR$/stream_worker/stream_worker.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/information_collector/com_port_worker.py" beforeDir="false" afterPath="$PROJECT_DIR$/information_collector/com_port_worker.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,23 +22,28 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Gumbolit &lt;artemmironkin@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Gumbolit"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Gumbolit&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Gumbolit/DataCollector",
-    "accountId": "4c97c139-cb26-4d8e-b409-3befebaa7191"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Gumbolit/DataCollector&quot;,
+    &quot;accountId&quot;: &quot;4c97c139-cb26-4d8e-b409-3befebaa7191&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2uU9go9Tw7GQoUWgR0jGhdDNE3n" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -55,6 +57,7 @@
     "Python.information_collection_interface.executor": "Run",
     "Python.main.executor": "Run",
     "Python.mqtt_sender.executor": "Run",
+    "Python.test.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "settings.editor.selected.configurable": "vcs.Git"
@@ -84,7 +87,31 @@
       <option name="project" value="LOCAL" />
       <updated>1742302392627</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="В интерфейс InformationCollectorInterfase добавлено закрытие порта &#10;В интерфейс InformationCollectorInterfase исправлена опечатка&#10;Добавлени интерфейс для отправки данных information_sender.mqtt_sender с флагом подключения методами connect_to_server publish_to_server end_connection_to_server&#10;В классе наследнике MqttSender исправлены функции под работу с интерфейсом &#10;Переписан main под работу с изменениями">
+      <option name="closed" value="true" />
+      <created>1742386910621</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1742386910621</updated>
+    </task>
+    <task id="LOCAL-00003" summary="В интерфейс CollectorInterfase добавлено закрытие порта &#10;В интерфейс CollectorInterfase исправлена опечатка&#10;Добавлени интерфейс для отправки данных information_sender.mqtt_sender с флагом подключения методами connect_to_server publish_to_server end_connection_to_server&#10;В классе наследнике MqttSender исправлены функции под работу с интерфейсом &#10;Переписан main под работу с изменениями&#10;Интерфейсфы переименованы на более короткие и понятные">
+      <option name="closed" value="true" />
+      <created>1742387044121</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1742387044121</updated>
+    </task>
+    <task id="LOCAL-00004" summary="В интерфейс CollectorInterfase добавлено закрытие порта &#10;В интерфейс CollectorInterfase исправлена опечатка&#10;Добавлени интерфейс для отправки данных information_sender.mqtt_sender с флагом подключения методами connect_to_server publish_to_server end_connection_to_server&#10;В классе наследнике MqttSender исправлены функции под работу с интерфейсом &#10;Переписан main под работу с изменениями&#10;Интерфейсфы переименованы на более короткие и понятные">
+      <option name="closed" value="true" />
+      <created>1742387147258</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1742387147258</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -112,6 +139,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="реализован интерфейс для получения данных InformationCollectorIntrface переделан класс наследник com_port_worker" />
-    <option name="LAST_COMMIT_MESSAGE" value="реализован интерфейс для получения данных InformationCollectorIntrface переделан класс наследник com_port_worker" />
+    <MESSAGE value="В интерфейс InformationCollectorInterfase добавлено закрытие порта &#10;В интерфейс InformationCollectorInterfase исправлена опечатка&#10;Добавлени интерфейс для отправки данных information_sender.mqtt_sender с флагом подключения методами connect_to_server publish_to_server end_connection_to_server&#10;В классе наследнике MqttSender исправлены функции под работу с интерфейсом &#10;Переписан main под работу с изменениями" />
+    <MESSAGE value="В интерфейс CollectorInterfase добавлено закрытие порта &#10;В интерфейс CollectorInterfase исправлена опечатка&#10;Добавлени интерфейс для отправки данных information_sender.mqtt_sender с флагом подключения методами connect_to_server publish_to_server end_connection_to_server&#10;В классе наследнике MqttSender исправлены функции под работу с интерфейсом &#10;Переписан main под работу с изменениями&#10;Интерфейсфы переименованы на более короткие и понятные" />
+    <option name="LAST_COMMIT_MESSAGE" value="В интерфейс CollectorInterfase добавлено закрытие порта &#10;В интерфейс CollectorInterfase исправлена опечатка&#10;Добавлени интерфейс для отправки данных information_sender.mqtt_sender с флагом подключения методами connect_to_server publish_to_server end_connection_to_server&#10;В классе наследнике MqttSender исправлены функции под работу с интерфейсом &#10;Переписан main под работу с изменениями&#10;Интерфейсфы переименованы на более короткие и понятные" />
   </component>
 </project>
