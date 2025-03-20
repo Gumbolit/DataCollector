@@ -15,6 +15,8 @@ thread1.start()
 thread2 = ComPortReader(com4, sender4)
 thread2.start()
 
+
+
 """
 try:
 

@@ -1,5 +1,5 @@
 import serial
-from information_collector.information_collection_interface import *
+from information_collector.collection_interface import *
 
 
 #абстрактный класс который содержит общие поляя и методы
