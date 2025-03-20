@@ -4,7 +4,7 @@ from information_collector.collection_interface import *
 
 #абстрактный класс который содержит общие поляя и методы
 #для различных видов подключаемых устройств перифирии с разными датчиками
-class ComPortWorker(InformationCollectorIntrface):
+class ComPortWorker(CollectorIntrface):
     def __init__(self, com: str, baudrate: int = 9600):
         self._com = com
         self._baudrate = baudrate
@@ -40,7 +40,7 @@ class ComPortWorker(InformationCollectorIntrface):
             try:
                 self._data = self.ser.readline().decode('utf-8').strip()  # Чтение строки данных
 
-                if self.chack_data():
+                if self.check_data():
                     print(f"Получены данные: {self._data}")
                 else:
                     print("Нет данных для чтения.")
@@ -57,7 +57,7 @@ class ComPortWorker(InformationCollectorIntrface):
         """
         self.__read_data()
         try:
-            if self.chack_data():
+            if self.check_data():
                 return self._data
         except Exception as e:
             print(f"Ошибка при отправки данных в функции send_data() интерфейса InformationCollectorIntrface : {e}")

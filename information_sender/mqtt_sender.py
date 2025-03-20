@@ -1,9 +1,9 @@
 import paho.mqtt.client as mqtt
 import socket  # Для обработки сетевых ошибок
-
+from information_sender.sender_interface import *
 
 # класс для работы с брокером может быть абстрактным для каких-то наследников
-class MqttSender:
+class MqttSender(SenderIntrface):
     def __init__(self, topic: str, broker: str = 'mqtt.eclipseprojects.io', port: int = 1883):
         self._broker = broker
         self._port = port
@@ -14,21 +14,18 @@ class MqttSender:
     @property  # декоратор который делает геттер
     def topic(self):
         return self._topic
-
     @property
     def broker(self):
         return self._broker
-
     @property
     def port(self):
         return self._port
-
     @property
     def is_connected(self):
         return self._is_connected
 
     #Подключение к брокеру
-    def conect_to_broker(self):
+    def connection_to_server(self):
         """
         подключение к брокеру
 
@@ -47,12 +44,12 @@ class MqttSender:
             print(f"Неизвестная ошибка приподключении к {self._broker}: {e}")
 
     # Публикуем сообщение в топик
-    def publish_in_topik(self, message: str):
+    def send_to_server(self, message: str):
 
         # Проверяем, установлено ли подключение
         if not self._is_connected:
             print("Подключение не установлено. Пытаемся подключиться...")
-            self.conect_to_broker()  # Вызываем connect, если подключение отсутствует
+            self.connection_to_server()  # Вызываем connect, если подключение отсутствует
 
         if self._is_connected:  #проверяем есть ли подключение
             try:
@@ -63,7 +60,7 @@ class MqttSender:
         else:
             print("Не удалось подключиться к брокеру. Сообщение не отправлено.")
 
-    def close_broker(self):
+    def end_connection_to_server(self):
         if self._is_connected:
             try:
                 self.client.disconnect(self._broker, self._port)

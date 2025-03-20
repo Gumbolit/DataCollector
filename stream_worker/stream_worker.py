@@ -8,23 +8,24 @@ class ComPortReader(threading.Thread):
         super().__init__()
         self.com = com
         self.sender = sender
+        # по сути threading.Event() это переменная-флаг доступная доступная одновременно всем потокам
         self._stop_event = threading.Event()  # Событие для остановки потока
 
     def run(self):
         """Основные метод, который выполняется в потоке."""
         while not self._stop_event.is_set():
             try:
-                self.sender.conect_to_broker()
+                self.sender.connection_to_server()
                 data = self.com.get_data()
                 if data:
-                   self.sender.publish_in_topik(data)
+                   self.sender.send_to_server(data)
                    print(data)
                 else:
                    print("Ожидание данных...")
                 print(f"Data from {self.com.com}: {data}")
             except KeyboardInterrupt:
                 self.com.close_com_port()
-                self.sender.close_broker()
+                self.sender.end_connection_to_server()
                 print("Программа остановлена пользователем.")
 
     def stop(self):

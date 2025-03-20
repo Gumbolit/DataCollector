@@ -5,8 +5,7 @@ from stream_worker.stream_worker import ComPortReader
 com3 = ComPortWorker('COM3')
 sender3 = MqttSender('test/topic190A','mqtt.eclipseprojects.io',1883)
 
-
-com4 = ComPortWorker('COM4')
+com4 = ComPortWorker('COM5')
 sender4 = MqttSender('test/topic190A2','mqtt.eclipseprojects.io',1883)
 
 thread1 = ComPortReader(com3, sender3)

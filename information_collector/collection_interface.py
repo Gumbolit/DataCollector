@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
-
-class InformationCollectorIntrface(ABC):
+# возможное улучшение с помощью шаблона "Стратегия" (Strategy Pattern) для обработки данных.
+class CollectorIntrface(ABC):
     """
     в наследнике обязательно поле _data
     и функции chack_data и send_data
@@ -9,7 +9,7 @@ class InformationCollectorIntrface(ABC):
 
     _data: str = None  # Поле для полученной данных
 
-    def chack_data(self):
+    def check_data(self):
         if self._data==None:
              return False
         else: return True
