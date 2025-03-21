@@ -3,7 +3,7 @@ import time
 from information_collector.com_port_worker import*
 from information_sender.mqtt_sender import MqttSender
 
-class ComPortReader(threading.Thread):
+class StreamWorker(threading.Thread):
     def __init__(self, com: ComPortWorker, sender: MqttSender):
         super().__init__()
         self.com = com

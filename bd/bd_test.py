@@ -1,6 +1,6 @@
 from information_collector.com_port_worker import*
 from information_sender.mqtt_sender import *
-from stream_worker.stream_worker import ComPortReader
+from stream_worker.stream_worker import StreamWorker
 import sqlite3
 
 class Sqllite_worker:
